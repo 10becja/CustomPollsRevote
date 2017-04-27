@@ -1,0 +1,5 @@
+name: CustomPollsRevote
+version: 1.0
+main: me.becja10.CustomPollsRevote.CustomPollsRevote
+depend: [CustomPolls]
+description: Allows revoting
