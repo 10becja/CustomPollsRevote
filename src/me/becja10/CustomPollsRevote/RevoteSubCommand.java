@@ -24,34 +24,30 @@ public class RevoteSubCommand extends SubCommand{
 		super(provider);
 	}
 
-	@Override
 	public List<String> getAliases() {
-		return new ArrayList<String>();
+		List<String> list = new ArrayList<String>();
+		list.add(getShownAlias());
+		return list;
 	}
 
-	@Override
 	public String getHelpMessage() {
 		return MessageConfig.COMMAND_HELP_FORMAT.getString()
 				.replace("%EXAMPLE%", "/" + getProvider().getAlias() + " " + getShownAlias() + " <poll> <choice>")
 				.replace("%DESCRIPTION%", "Change your vote for the poll");
 	}
 
-	@Override
 	public String getShownAlias() {
 		return "revote";
 	}
 
-	@Override
 	public boolean hasPermission(CommandSender sender) {
 		return sender.hasPermission("poll.command.revote");
 	}
 
-	@Override
 	public boolean hasToBePlayer() {
 		return true;
 	}
 
-	@Override
 	public void onCommand(CommandSender sender, String[] args) {
 		if (args.length < 2)
 		{
